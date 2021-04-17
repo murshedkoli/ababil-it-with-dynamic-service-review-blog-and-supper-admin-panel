@@ -9,17 +9,14 @@ import Services from '../Services/Services';
 
 const HomePage = () => {
     return (
-        <div style={{
-            width: '100%',
-          
-            background: '#37517e'
-          }}>
+        <div style={{ width: '100%',background: '#37517e'}}>
                <Heder/>
                <HeroSection/>
                <Services/>
+               <AboutSection/>
                <Review/>
                <BlogPosts/>
-               <AboutSection/>
+              
                <Footer/>
         </div>
     );

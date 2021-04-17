@@ -2,24 +2,27 @@ import React from 'react';
 import './SingleReview.css'
 import pic from '../../../Images/hero-img.png'
 
-const SingleReview = () => {
+const SingleReview = ({ review }) => {
+
+    const { reviewDate, img,  userName,  reviewContent } = review;
+
     return (
         <div class="col-lg-6">
-        <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
-            <div class="pic"><img src={pic} class="img-fluid" alt=""/></div>
+            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+                <div class="pic"><img src={img} class="img-fluid" alt="" /></div>
                 <div class="member-info">
-                    <h4>Walter White</h4>
-                    <span>Chief Executive Officer</span>
-                    <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                    <h4>{userName}</h4>
+                    <span>Review Date : {new Date(reviewDate).toDateString()} </span>
+                    <p>{reviewContent}</p>
                     <div class="social">
-                        <a href=""><i class="ri-twitter-fill"></i></a>
-                        <a href=""><i class="ri-facebook-fill"></i></a>
-                        <a href=""><i class="ri-instagram-fill"></i></a>
-                        <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                        <a class="twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a class="instagram"><i class="fab fa-instagram"></i></a>
+                        <a class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     );
 };
 

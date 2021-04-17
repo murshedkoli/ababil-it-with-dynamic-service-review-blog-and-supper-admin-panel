@@ -1,21 +1,17 @@
 import React from 'react';
 import './SinglePost.css'
 
-const SinglePost = () => {
+const SinglePost = ({post}) => {
+    const {imgUrl, postContent, postDate, postTitle} = post;
     return (
-        <div class="col-lg-6">
-            <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
-                <div class="pic"><img src="" class="img-fluid" alt="" /></div>
-                <div class="member-info">
-                    <h4>Walter White</h4>
-                    <span>Chief Executive Officer</span>
-                    <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-                    <div class="social">
-                        <a href=""><i class="ri-twitter-fill"></i></a>
-                        <a href=""><i class="ri-facebook-fill"></i></a>
-                        <a href=""><i class="ri-instagram-fill"></i></a>
-                        <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                    </div>
+        <div class="col-lg-4 mt-2">
+            <div class="card" style={{width: '18rem'}}>
+                <img class="card-img-top" src={imgUrl} />
+                <div class="card-body">
+                    <h5 class="card-title"> {postTitle}</h5>
+                    <p class="card-text">{postContent}</p>
+                    <p>Publish Date: {new Date(postDate).toDateString()} </p>
+                    <a class="btn btn-primary">Read Post</a>
                 </div>
             </div>
         </div>

@@ -60,14 +60,13 @@ const Footer = () => {
 
                             <div class="col-lg-3 col-md-6 footer-links">
                                 <h4>Our Social Networks</h4>
-                                <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-                                {/* <div class="social-links mt-3">
-                                                                <a  class="twitter"><i class="bx bxl-twitter"></i></a>
-                                                                <a  class="facebook"><i class="bx bxl-facebook"></i></a>
-                                                                <a  class="instagram"><i class="bx bxl-instagram"></i></a>
-                                                                <a  class="google-plus"><i class="bx bxl-skype"></i></a>
-                                                                <a  class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                                                            </div> */}
+                                <p>Connect with us in social media</p>
+                                <div class="social-links mt-3">
+                                                                <a  class="twitter"><i class="fab fa-twitter"></i></a>
+                                                                <a  class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                                                <a  class="instagram"><i class="fab fa-instagram"></i></a>
+                                                                <a  class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                                            </div>
                             </div>
 
                         </div>
@@ -76,12 +75,9 @@ const Footer = () => {
 
                 <div class="container footer-bottom clearfix">
                     <div class="copyright">
-                        &copy; Copyright <strong><span>Arsha</span></strong>. All Rights Reserved
+                        &copy; Copyright <strong><span>Ababil It</span></strong>. All Rights Reserved
                                                     </div>
-                    <div class="credits">
-
-                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                    </div>
+                   
                 </div>
             </footer>
 

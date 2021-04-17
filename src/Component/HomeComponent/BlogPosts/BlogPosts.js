@@ -1,19 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SinglePost from './SinglePost';
 
 const BlogPosts = () => {
+
+
+
+    const [blogposts, setBlogPosts] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/blogposts')
+          .then(res => res.json())
+          .then(data => {
+    
+            setBlogPosts(data)
+    
+          })
+      },[] )
+    
+
+
+
     return (
-        <section id="team" class="team section-bg">
+        <section id="team" class="team ">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Team</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <h2 style={{color:'white'}}>Blog Posts</h2>
+                <p className="text-secondary">Read Our {blogposts.length} blog post that write by our customars..</p>
             </div>
 
             <div class="row">
 
-                <SinglePost/>
+                {
+                    blogposts.map(post=> <SinglePost post={post}/>)
+                }
+
+                
 
 
             </div>

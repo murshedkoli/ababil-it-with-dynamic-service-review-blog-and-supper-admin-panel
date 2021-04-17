@@ -4,10 +4,10 @@ import './AboutSection.css'
 const AboutSection = () => {
     return (
         <section id="about" class="about">
-            <div class="container" data-aos="fade-up">
+            <div class="container text-secondary"  >
 
                 <div class="section-title">
-                    <h2>About Us</h2>
+                    <h2 style={{color:'white'}} >About Us</h2>
                 </div>
 
                 <div class="row content">
