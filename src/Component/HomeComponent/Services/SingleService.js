@@ -12,7 +12,7 @@ const SingleService = ({ service }) => {
 
             <div className="box">
                 <div className="img-container" >
-                    <img src={imgUrl} alt="Avatar" class="image" />
+                    <img style={{width:'100%', height:'200px'}} src={imgUrl} alt="Avatar" class="image" />
                     <div class="middle">
                         <div class="text">{serviceName}</div>
                     </div>
