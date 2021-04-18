@@ -11,7 +11,6 @@ const handleLogout= ()=>{
 }
 
 const userInSession = JSON.parse(sessionStorage.getItem('user'));
-console.log(userInSession)
 
 
     return (

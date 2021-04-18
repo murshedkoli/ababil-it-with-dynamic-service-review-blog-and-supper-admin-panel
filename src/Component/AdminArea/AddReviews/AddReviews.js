@@ -5,6 +5,9 @@ import ReviewForm from './ReviewForm';
 
 const AddReviews = () => {
 
+    document.title = "Give Review - Ababil Information Technology"
+
+
 
  const [notification, setNotification] = useState(false);
 

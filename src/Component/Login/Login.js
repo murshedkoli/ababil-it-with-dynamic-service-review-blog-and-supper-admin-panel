@@ -4,6 +4,8 @@ import Heder from '../HomeComponent/Header/Heder';
 import LoginPart from './LoginPart';
 
 const Login = () => {
+    document.title = "Log In Page - Ababil Information Technology"
+
     return (
         <div style={{
             width: '100%',

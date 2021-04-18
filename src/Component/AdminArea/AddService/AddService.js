@@ -7,6 +7,9 @@ import ServiceForm from './ServiceForm';
 const AddService = () => {
 
 
+    document.title = "New Service - Ababil Information Technology"
+
+
  const [notification, setNotification] = useState(false);
 
     const [imageUrl, setImageUrl] = useState('https://www.thedome.org/wp-content/uploads/2019/06/300x300-Placeholder-Image.jpg');

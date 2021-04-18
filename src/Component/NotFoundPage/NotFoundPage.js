@@ -2,6 +2,9 @@ import React from 'react';
 import Heder from '../HomeComponent/Header/Heder';
 
 const NotFoundPage = () => {
+
+    document.title = "Page Not Found - Ababil Information Technology"
+
     return (
         <div style={{ width: '100%',background: '#37517e'}}>
             <Heder></Heder>

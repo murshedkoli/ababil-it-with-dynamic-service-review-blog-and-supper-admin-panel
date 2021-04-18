@@ -6,6 +6,10 @@ import AdminSidebar from '../AdminSidebar/AdminSidebar';
 
 const OrderForm = () => {
 
+
+    document.title = "Place Your Order - Ababil Information Technology"
+
+
     const [notification, setNotification] = useState(false);
 
 

@@ -5,6 +5,8 @@ import ServiceForManage from './ServiceForManage';
 
 const ManageService = () => {
 
+    document.title = "Manage Services - Ababil Information Technology"
+
         
     const [notification, setNotification] = useState({
         update:"",

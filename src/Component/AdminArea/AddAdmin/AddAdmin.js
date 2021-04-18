@@ -6,6 +6,9 @@ import Users from './Users';
 
 const AddAdmin = () => {
 
+  document.title = "Make Admin - Ababil Information Technology"
+
+
     const [admins, setAdmins] = useState([]);
     console.log(admins)
     

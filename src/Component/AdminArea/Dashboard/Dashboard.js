@@ -4,6 +4,9 @@ import OrderList from '../OrderList/OrderList';
 
 const Dashboard = () => {
 
+  document.title = "Dashboard - Ababil Information Technology"
+
+
     const [orderList, setOrderList] = useState([]);
     const [notification, setNotification] = useState({
         update:"",

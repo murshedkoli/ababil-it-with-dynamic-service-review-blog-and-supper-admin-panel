@@ -8,6 +8,8 @@ import Review from '../Review/Review';
 import Services from '../Services/Services';
 
 const HomePage = () => {
+    document.title = "Home Page - Ababil Information Technology"
+
     return (
         <div style={{ width: '100%',background: '#37517e'}}>
                <Heder/>

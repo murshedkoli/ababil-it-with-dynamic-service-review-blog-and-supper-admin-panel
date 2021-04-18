@@ -5,6 +5,7 @@ import loading from '../../../Images/loading.gif';
 
 const Services = () => {
 
+    document.title = "Services - Ababil Information Technology"
 
 
     const [services, setServices] = useState([]);

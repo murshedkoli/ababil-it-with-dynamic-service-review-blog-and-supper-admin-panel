@@ -7,6 +7,8 @@ import SinglePost from './SinglePost';
 
 const AddBlogPost = () => {
 
+    document.title = "New Post - Ababil Information Technology"
+
 
  const [notification, setNotification] = useState(false);
 
