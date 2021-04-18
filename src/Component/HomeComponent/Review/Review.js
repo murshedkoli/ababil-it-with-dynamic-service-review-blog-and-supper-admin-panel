@@ -5,7 +5,6 @@ import loading from '../../../Images/loading.gif';
 
 const Review = () => {
 
-    document.title = "Reviews - Ababil Information Technology"
 
 
     const [reviews, setReviews] = useState([]);
