@@ -1,5 +1,7 @@
 import React from 'react';
 import Swal from 'sweetalert2'
+import swal from 'sweetalert';
+
 
 const OrderList = ({ orderList, notification, setNotification }) => {
 
@@ -24,6 +26,8 @@ const OrderList = ({ orderList, notification, setNotification }) => {
                     newnote.update = "Successfully Change Status";
                     newnote.failed = "";
                     setNotification(newnote);
+                    swal("Done!", "Order Status Change Succefully!", "success");
+
                 } else {
                     const newnote = { ...notification };
                     newnote.update = "";
@@ -93,9 +97,9 @@ const OrderList = ({ orderList, notification, setNotification }) => {
                                 <td> {new Date(order.orderDate).toDateString()} </td>
                                 <td> {order.orderService} </td>
                                 <td>{order.orderCost}</td>
-                                <td className={`${order.status === 'Pending' ? 'btn btn-outline-danger' : 'btn btn-outline-success'}`}>{order.status}</td>
+                                <td className={`${order.status === "pending" ? 'btn btn-danger' : 'btn btn-outline-success'}`}>{order.status}</td>
                                 {
-                                    userInLoggedIn.isAdmin && <td><button onClick={() => handlConfirm(order._id, order.status)}>Change Status</button></td>
+                                    userInLoggedIn.isAdmin && <td><button className="btn btn-success" onClick={() => handlConfirm(order._id, order.status)}>Change Status</button></td>
 
                                 }
                             </tr>)

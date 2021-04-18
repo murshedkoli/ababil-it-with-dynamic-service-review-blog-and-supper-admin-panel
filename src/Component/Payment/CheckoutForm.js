@@ -1,5 +1,7 @@
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { useState } from 'react';
+import swal from 'sweetalert';
+
 
 const CheckoutForm = ({handlePayment}) => {
     const stripe = useStripe();
@@ -36,6 +38,7 @@ const CheckoutForm = ({handlePayment}) => {
             setpaymentSuccess('Payment Success');
             setpaymentError(null)
             handlePayment(paymentMethod.id);
+            swal("Payment Done!", "Your Order Placed Succefully!", "success");
 
         }
     };

@@ -14,4 +14,7 @@ Feature :
 7. Admin Can Make any User as admin
 8. Admin Cam Remove Any Admin 
 
+
+Spacial Feature: Pop Up............
+
 it's make with React...

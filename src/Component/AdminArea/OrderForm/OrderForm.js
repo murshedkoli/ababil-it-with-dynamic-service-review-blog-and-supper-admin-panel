@@ -55,6 +55,7 @@ const OrderForm = () => {
             .then(data => {
                 if (data.insertedCount) {
                     setNotification(true)
+                   
                 } else {
                     setNotification(false)
                 }
