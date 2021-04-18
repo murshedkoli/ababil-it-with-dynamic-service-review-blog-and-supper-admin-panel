@@ -13,7 +13,7 @@ Feature :
 6. Order Place after successfull Payment
 7. Admin Can Make any User as admin
 8. Admin Cam Remove Any Admin 
-
+9. Loading gif when data not load...
 
 Spacial Feature: Pop Up............
 
