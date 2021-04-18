@@ -116,7 +116,7 @@ const AddBlogPost = () => {
         }
 
        
-        fetch('http://localhost:5000/addpost', {
+        fetch('https://ababil-it-assignment-11.herokuapp.com/addpost', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(postData)

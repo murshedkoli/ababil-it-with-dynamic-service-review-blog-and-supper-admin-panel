@@ -9,7 +9,7 @@ const SinglePost = () => {
     const [blogposts, setBlogPosts] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/userpost?email=" + userInLoggedIn.email)
+        fetch("https://ababil-it-assignment-11.herokuapp.com/userpost?email=" + userInLoggedIn.email)
             .then(res => res.json())
             .then(data => {
 

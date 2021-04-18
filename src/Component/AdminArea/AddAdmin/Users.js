@@ -6,7 +6,7 @@ const Users = ({users, notification, setNotification}) => {
     const makeAdmin = (id) => {
 
 
-        fetch(`http://localhost:5000/makeadmin/${id}`, {
+        fetch(`https://ababil-it-assignment-11.herokuapp.com/makeadmin/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify()

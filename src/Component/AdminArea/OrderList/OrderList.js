@@ -12,7 +12,7 @@ const OrderList = ({ orderList, notification, setNotification }) => {
             status: status,
         }
 
-        fetch(`http://localhost:5000/changestatus/${id}`, {
+        fetch(`https://ababil-it-assignment-11.herokuapp.com/changestatus/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(statusData)

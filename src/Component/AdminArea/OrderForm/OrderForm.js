@@ -15,7 +15,7 @@ const OrderForm = () => {
 
     useEffect(() => {
 
-        const url = "http://localhost:5000/orderservice?serviceId=" + _id;
+        const url = "https://ababil-it-assignment-11.herokuapp.com/orderservice?serviceId=" + _id;
         fetch(url)
             .then(res => res.json())
             .then(data => setService(data))
@@ -42,7 +42,7 @@ const OrderForm = () => {
 
 
 
-        fetch('http://localhost:5000/addorder', {
+        fetch('https://ababil-it-assignment-11.herokuapp.com/addorder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(orderData)

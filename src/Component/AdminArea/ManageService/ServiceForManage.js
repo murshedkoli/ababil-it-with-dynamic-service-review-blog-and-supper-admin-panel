@@ -14,7 +14,7 @@ const ServiceForManage = ({ notification, setNotification, services }) => {
             serviceName: name,
         }
 
-        fetch(`http://localhost:5000/updateservice/${id}`, {
+        fetch(`https://ababil-it-assignment-11.herokuapp.com/updateservice/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(dataForUpdate)
@@ -72,7 +72,7 @@ const ServiceForManage = ({ notification, setNotification, services }) => {
 
     const deleteService = (id) => {
 
-        fetch(`http://localhost:5000/deleteservice/${id}`, {
+        fetch(`https://ababil-it-assignment-11.herokuapp.com/deleteservice/${id}`, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify()

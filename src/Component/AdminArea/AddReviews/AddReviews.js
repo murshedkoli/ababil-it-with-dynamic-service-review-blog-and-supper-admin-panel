@@ -34,7 +34,7 @@ const userInLoggedIn = JSON.parse(sessionStorage.getItem('user'));
         }
 
        
-        fetch('http://localhost:5000/addreview', {
+        fetch('https://ababil-it-assignment-11.herokuapp.com/addreview', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(postData)

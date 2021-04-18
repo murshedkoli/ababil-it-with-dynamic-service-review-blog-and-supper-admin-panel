@@ -41,7 +41,7 @@ const LoginPart = () => {
         }
 
        
-        fetch('http://localhost:5000/adduser', {
+        fetch('https://ababil-it-assignment-11.herokuapp.com/adduser', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(userData)

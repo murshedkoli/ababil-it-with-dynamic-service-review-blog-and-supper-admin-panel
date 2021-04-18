@@ -13,7 +13,7 @@ const Dashboard = () => {
     const userInLoggedIn = JSON.parse(sessionStorage.getItem('user'));
 
     useEffect(() => {
-        fetch('http://localhost:5000/orderlist?email='+userInLoggedIn.email)
+        fetch('https://ababil-it-assignment-11.herokuapp.com/orderlist?email='+userInLoggedIn.email)
           .then(res => res.json())
           .then(data => {
     

@@ -9,7 +9,7 @@ const BlogPosts = () => {
     const [blogposts, setBlogPosts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/blogposts')
+        fetch('https://ababil-it-assignment-11.herokuapp.com/blogposts')
           .then(res => res.json())
           .then(data => {
     

@@ -111,7 +111,7 @@ const AddService = () => {
         }
 
        
-        fetch('http://localhost:5000/addservice', {
+        fetch('https://ababil-it-assignment-11.herokuapp.com/addservice', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(serviceData)

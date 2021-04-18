@@ -8,7 +8,7 @@ const Admins = ({admins, notification, setNotification}) => {
     const removeAdmin = (id) => {
 
 
-        fetch(`http://localhost:5000/removeadmin/${id}`, {
+        fetch(`https://ababil-it-assignment-11.herokuapp.com/removeadmin/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify()

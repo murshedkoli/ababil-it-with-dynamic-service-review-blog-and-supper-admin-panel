@@ -19,7 +19,7 @@ const AddAdmin = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/admins')
+        fetch('https://ababil-it-assignment-11.herokuapp.com/admins')
           .then(res => res.json())
           .then(data => {
     
@@ -29,7 +29,7 @@ const AddAdmin = () => {
       },[ notification] )
 
       useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://ababil-it-assignment-11.herokuapp.com/users')
           .then(res => res.json())
           .then(data => {
     
