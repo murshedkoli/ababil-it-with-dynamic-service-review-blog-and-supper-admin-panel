@@ -104,7 +104,7 @@ const OrderForm = () => {
             <div className="bg-secondary" style={{  marginLeft: '260px', marginTop: '-50px', width: '87%' }}>
 
                 <div className="row">
-                    <div className="col-md-6" style={{display: readyForPayment? 'none':'block'}}>
+                    <div className="col-md-6" style={{opacity: readyForPayment? '0.1':'1'}}>
                         <div className="p-5" style={{ marginTop: '30px' }}>
                             <h1 style={{ textAlign: 'center', color: 'white', borderBottom: '1px solid #37517e', marginBottom: '40px' }}>Place Your Order</h1>
 
@@ -140,7 +140,7 @@ const OrderForm = () => {
 
 
                     <div className="col-md-6">
-                        <div className="p-5" style={{ display: readyForPayment? 'block':'none', marginTop: '30px' }}>
+                        <div className="p-5" style={{opacity: readyForPayment? '1':'.1', marginTop: '30px' }}>
                             <h1 style={{ textAlign: 'center', color: 'white', borderBottom: '1px solid #37517e', marginBottom: '40px' }}>Place Your Order</h1>
 
                                 <PaymentProcess handlePayment={handlePayment}/>

@@ -8,7 +8,7 @@ const stripePromise = loadStripe('pk_test_51IhJHFBCqx8TtkMFCjxIf2NTDbMH7jIM1L5BJ
 
 const PaymentProcess = ({handlePayment}) => {
     return (
-        <div className="m-3 p-5 bg-light">
+        <div style={{borderRadius:'10px'}} className="m-3 p-5 bg-light">
             <Elements stripe={stripePromise}>
             <CheckoutForm handlePayment={handlePayment}/>
 
