@@ -48,7 +48,7 @@ const LoginPart = () => {
         })
             .then(res => res.json())
             .then(data => {
-            sessionStorage.setItem('user', JSON.stringify(userData));
+            sessionStorage.setItem('user', JSON.stringify(data));
             history.replace(from);
             
             })

@@ -4,6 +4,8 @@ import PostForm from './PostForm';
 import swal from 'sweetalert';
 import { useHistory } from 'react-router';
 import axios from 'axios';
+import { useEffect } from 'react/cjs/react.production.min';
+import SinglePost from './SinglePost';
 
 const AddBlogPost = () => {
 
@@ -19,6 +21,9 @@ const AddBlogPost = () => {
     
     const userInLoggedIn = JSON.parse(sessionStorage.getItem('user'));
 
+
+    
+   
 
 
     const handleOnBlur = e => {
@@ -158,8 +163,6 @@ const AddBlogPost = () => {
     }
 
 
-
-
     return (
         <div >
            
@@ -175,6 +178,8 @@ const AddBlogPost = () => {
                    <PostForm uploadPercentage={uploadPercentage} handlePopUp={handlePopUp} handleImgUpload={handleImgUpload} imageUrl={imageUrl} handleOnBlur={handleOnBlur}></PostForm>
 
                }
+
+               <SinglePost  />
          
             </div>
             </div>

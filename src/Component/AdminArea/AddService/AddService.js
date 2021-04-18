@@ -163,7 +163,7 @@ const AddService = () => {
         <AdminSidebar/>
        
          
-        <div className="bg-secondary" style={{marginLeft:'260px', marginTop:'-50px', width:'87%'}}>
+        <div className="bg-secondary" style={{marginLeft:'260px', marginTop:'-46px', width:'87%'}}>
             <div className="p-5" style={{marginTop:'30px'}}>
                 <h1 style={{textAlign:'center', color:'white', borderBottom:'1px solid #37517e',  marginBottom:'40px'}}>Add New Service</h1>
        

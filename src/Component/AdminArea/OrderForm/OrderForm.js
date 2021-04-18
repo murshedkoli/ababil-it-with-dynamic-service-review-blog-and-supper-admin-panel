@@ -120,12 +120,14 @@ const OrderForm = () => {
 
                     }
 
-                    <div >
+                  
+                </div>
+
+                <div style={{height:'200px'}} >
                         
                         <Payment />
                     </div>
 
-                </div>
             </div>
         </div>
     );

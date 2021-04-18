@@ -30,6 +30,7 @@ const userInLoggedIn = JSON.parse(sessionStorage.getItem('user'));
             email: userInLoggedIn.email,
             userName:userInLoggedIn.name,
            reviewContent: formData.reviewContent,
+           postName:formData.postName
         }
 
        

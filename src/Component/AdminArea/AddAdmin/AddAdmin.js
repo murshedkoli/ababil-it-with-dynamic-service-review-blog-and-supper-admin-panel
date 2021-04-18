@@ -16,6 +16,7 @@ const AddAdmin = () => {
         failed:''
     })
 
+
     const userInLoggedIn = JSON.parse(sessionStorage.getItem('user'));
 
     useEffect(() => {
@@ -45,13 +46,13 @@ const AddAdmin = () => {
         <AdminSidebar/>
        
          
-        <div className="bg-secondary" style={{marginLeft:'260px', height:'100%', position:'fixed', top:'0', width:'87%'}}>
+        <div className="bg-secondary" style={{marginLeft:'260px', marginTop:'-46px', width:'87%'}}>
             <div className="p-5" style={{marginTop:'30px'}}>
                 <h1 style={{textAlign:'center', color:'white', borderBottom:'1px solid #37517e',  marginBottom:'40px'}}>Add New Admin</h1>
        
             <div>
             <h2 style={{textAlign:'center', color:'white', borderBottom:'1px solid #37517e',  marginBottom:'40px'}}>All Admin</h2>
-                <Admins admins={admins} />
+                <Admins admins={admins} notification={notification} setNotification={setNotification} />
             </div>
 
             <div>

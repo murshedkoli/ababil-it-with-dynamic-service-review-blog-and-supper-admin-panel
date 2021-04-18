@@ -1,6 +1,38 @@
 import React from 'react';
 
-const Admins = ({admins}) => {
+const Admins = ({admins, notification, setNotification}) => {
+
+    const userInSession = JSON.parse(sessionStorage.getItem('user'));
+
+
+    const removeAdmin = (id) => {
+
+
+        fetch(`http://localhost:5000/removeadmin/${id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify()
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    const newnote = { ...notification };
+                    newnote.update = "Successfully Remove Admin";
+                    newnote.failed = "";
+                    setNotification(newnote);
+                } else {
+                    const newnote = { ...notification };
+                    newnote.update = "";
+                    newnote.failed = "Unsuccessfully Remove Admin Request";
+                    setNotification(newnote);
+                }
+
+            })
+
+    }
+
+
+
     return (
         <div class="card mb-2">
             <div class="card-body">
@@ -11,16 +43,20 @@ const Admins = ({admins}) => {
                             <th scope="col">User Image</th>
                             <th scope="col">User Name</th>
                             <th scope="col">User Email</th> 
-                           
+                            <th scope="col">Action</th> 
                         </tr>
                     </thead>
                     <tbody>
                         {
                             admins.map((user, i) => <tr>
                                 <th scope="row">{i + 1}</th>
-                                <td> <img src={user.imgUrl} alt=""/> </td>
+                                <td> <img style={{width:'100px'}} src={user.imgUrl} alt=""/> </td>
                                 <td>{user.name}</td> 
                                 <td>{user.email}</td>   
+                               {
+                                   userInSession.email === user.email ? <button className="btn btn-outline-success">This is You</button>: <td><button className="btn btn-danger" onClick={() => removeAdmin(user._id)}>Remove Admin</button></td>
+                               }
+
                             </tr>)
                         }
 

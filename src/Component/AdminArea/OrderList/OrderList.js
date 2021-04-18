@@ -3,6 +3,7 @@ import Swal from 'sweetalert2'
 
 const OrderList = ({ orderList, notification, setNotification }) => {
 
+    const userInLoggedIn = JSON.parse(sessionStorage.getItem('user'));
 
     const submitStatus = (id, status) => {
 
@@ -80,7 +81,9 @@ const OrderList = ({ orderList, notification, setNotification }) => {
                             <th scope="col">Service Name</th>
                             <th scope="col">Service Cost</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Action</th>
+                           {
+                               userInLoggedIn.isAdmin&&  <th scope="col">Action</th>
+                           }
                         </tr>
                     </thead>
                     <tbody>
@@ -91,7 +94,10 @@ const OrderList = ({ orderList, notification, setNotification }) => {
                                 <td> {order.orderService} </td>
                                 <td>{order.orderCost}</td>
                                 <td className={`${order.status === 'Pending' ? 'btn btn-outline-danger' : 'btn btn-outline-success'}`}>{order.status}</td>
-                                <td><button onClick={() => handlConfirm(order._id, order.status)}>Change Status</button></td>
+                                {
+                                    userInLoggedIn.isAdmin && <td><button onClick={() => handlConfirm(order._id, order.status)}>Change Status</button></td>
+
+                                }
                             </tr>)
                         }
 

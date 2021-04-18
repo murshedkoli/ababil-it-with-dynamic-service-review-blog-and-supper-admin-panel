@@ -4,7 +4,7 @@ import pic from '../../../Images/hero-img.png'
 
 const SingleReview = ({ review }) => {
 
-    const { reviewDate, img,  userName,  reviewContent } = review;
+    const { reviewDate, img,  userName,  reviewContent,postName } = review;
 
     return (
         <div class="col-lg-6">
@@ -12,7 +12,7 @@ const SingleReview = ({ review }) => {
                 <div class="pic"><img src={img} class="img-fluid" alt="" /></div>
                 <div class="member-info">
                     <h4>{userName}</h4>
-                    <span>Review Date : {new Date(reviewDate).toDateString()} </span>
+                    <span> {postName} </span>
                     <p>{reviewContent}</p>
                     <div class="social">
                         <a class="twitter"><i class="fab fa-twitter"></i></a>

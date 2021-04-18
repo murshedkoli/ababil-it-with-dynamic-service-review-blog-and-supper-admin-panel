@@ -49,10 +49,10 @@ const Users = ({users, notification, setNotification}) => {
                         {
                             users.map((user, i) => <tr>
                                 <th scope="row">{i + 1}</th>
-                                <td> <img src={user.imgUrl} alt=""/> </td>
+                                <td> <img style={{width:'100px'}} src={user.imgUrl} alt=""/> </td>
                                 <td>{user.name}</td> 
                                 <td>{user.email}</td>   
-                                <td><button onClick={() => makeAdmin(user._id)}>Make Admin</button></td>
+                                <td><button className="btn btn-success" onClick={() => makeAdmin(user._id)}>Make Admin</button></td>
                             </tr>)
                         }
 
