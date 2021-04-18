@@ -1,10 +1,9 @@
 import React from 'react';
 import './SingleReview.css'
-import pic from '../../../Images/hero-img.png'
 
 const SingleReview = ({ review }) => {
 
-    const { reviewDate, img,  userName,  reviewContent,postName } = review;
+    const {  img,  userName,  reviewContent,postName } = review;
 
     return (
         <div class="col-lg-6">

@@ -17,7 +17,6 @@ const AddAdmin = () => {
     })
 
 
-    const userInLoggedIn = JSON.parse(sessionStorage.getItem('user'));
 
     useEffect(() => {
         fetch('http://localhost:5000/admins')

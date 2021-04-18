@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import {  useParams } from 'react-router';
 import swal from 'sweetalert';
-import Payment from '../../Payment/Payment';
+import PaymentProcess from '../../Payment/PaymentProcess';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
 
 const OrderForm = () => {
-
 
     const [notification, setNotification] = useState(false);
 
 
     const { _id } = useParams();
 
-    
+
 
     useEffect(() => {
 
@@ -24,21 +23,23 @@ const OrderForm = () => {
     }, [_id]);
 
     const [service, setService] = useState({});
-   
+
+    const [readyForPayment, setReadyForPayment] = useState(false);
 
     const userInLoggedIn = JSON.parse(sessionStorage.getItem('user'));
 
 
-    const handleSubmitForm = (e) => {
+    const handlePayment = (paymentId) => {
         const orderData = {
             orderDate: new Date(),
             orderService: service.serviceName,
             orderCost: service.serviceCost,
             email: userInLoggedIn.email,
             userName: userInLoggedIn.name,
-            status:'pending'
+            status: 'pending',
+            payment:paymentId
         }
-  
+
 
 
         fetch('http://localhost:5000/addorder', {
@@ -58,6 +59,11 @@ const OrderForm = () => {
 
     }
 
+
+    const handleSubmitForm = ()=>{
+        setReadyForPayment(true);
+    }
+
     const handlePopUp = (e) => {
 
 
@@ -66,11 +72,11 @@ const OrderForm = () => {
             text: `Once you submit order you can't cancel`,
             icon: "warning",
             buttons: ["Cencel", "Place Order"],
-            dangerMode: true,
+            dangerMode: false,
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    swal(` Your Order Successfully Placed`, {
+                    swal(` Please Payment for Confirm Order`, {
                         icon: "success",
                         buttons: handleSubmitForm(),
 
@@ -90,43 +96,55 @@ const OrderForm = () => {
             <AdminSidebar />
 
 
-            <div className="bg-secondary" style={{ marginLeft: '260px', marginTop: '-50px', width: '87%' }}>
-                <div className="p-5" style={{ marginTop: '30px' }}>
-                    <h1 style={{ textAlign: 'center', color: 'white', borderBottom: '1px solid #37517e', marginBottom: '40px' }}>Place Your Order</h1>
+            <div className="bg-secondary" style={{  marginLeft: '260px', marginTop: '-50px', width: '87%' }}>
 
-                    {
-                        notification ? <h3>Your Order Placed Successfully</h3> :
+                <div className="row">
+                    <div className="col-md-6" style={{display: readyForPayment? 'none':'block'}}>
+                        <div className="p-5" style={{ marginTop: '30px' }}>
+                            <h1 style={{ textAlign: 'center', color: 'white', borderBottom: '1px solid #37517e', marginBottom: '40px' }}>Place Your Order</h1>
 
-                            <div>
+                            {
+                                notification ? <h3>Your Order Placed Successfully</h3> :
 
-                                <form name="newPost" onSubmit={handlePopUp} style={{ padding: '40px', borderRadius: '20px', boxShadow: '2px 0px 10px', backgroundColor: 'white' }}>
+                                    <div>
+
+                                        <form name="newPost" onSubmit={handlePopUp} style={{ padding: '40px', borderRadius: '20px', boxShadow: '2px 0px 10px', backgroundColor: 'white' }}>
 
 
 
-                                    <div class="mb-3">
-                                        <label class="form-label">Service Name</label>
-                                        <input type="text" defaultValue={service.serviceName} class="form-control" name="ServiceName" placeholder="Service Name Here" disabled required />
+                                            <div class="mb-3">
+                                                <label class="form-label">Service Name</label>
+                                                <input type="text" defaultValue={service.serviceName} class="form-control" name="ServiceName" placeholder="Service Name Here" disabled required />
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label class="form-label">Service Cost</label>
+                                                <input type="number" defaultValue={service.serviceCost} class="form-control" name="ServiceCost" placeholder="Service Cost Here" disabled required />
+                                            </div>
+
+
+                                            <button style={{ width: '100%' }} type="submit" class="btn btn-lg btn-success">Place Order</button>
+                                        </form>
                                     </div>
 
-                                    <div class="mb-3">
-                                        <label class="form-label">Service Cost</label>
-                                        <input type="number" defaultValue={service.serviceCost} class="form-control" name="ServiceCost" placeholder="Service Cost Here" disabled required />
-                                    </div>
+                            }
 
 
-                                    <button style={{ width: '100%' }} type="submit" class="btn btn-lg btn-success">Place Order</button>
-                                </form>
-                            </div>
+                        </div>
+                    </div>
 
-                    }
 
-                  
+                    <div className="col-md-6">
+                        <div className="p-5" style={{ display: readyForPayment? 'block':'none', marginTop: '30px' }}>
+                            <h1 style={{ textAlign: 'center', color: 'white', borderBottom: '1px solid #37517e', marginBottom: '40px' }}>Place Your Order</h1>
+
+                                <PaymentProcess handlePayment={handlePayment}/>
+
+                        </div>
+                    </div>
+
                 </div>
 
-                <div style={{height:'200px'}} >
-                        
-                        <Payment />
-                    </div>
 
             </div>
         </div>
