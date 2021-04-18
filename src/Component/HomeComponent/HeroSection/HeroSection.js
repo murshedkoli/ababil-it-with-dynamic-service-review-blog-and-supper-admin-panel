@@ -14,7 +14,7 @@ const HeroSection = () => {
       <h1>Make Your Business Online With Us</h1>
       <h2>We are team of talented Designers and Developers for grow your business</h2>
       <div class="d-flex justify-content-center justify-content-lg-start">
-      <Link to="/registration">
+      <Link to="/login">
       <div class="button_slide slide_right link-text">
       
         Login For Order
