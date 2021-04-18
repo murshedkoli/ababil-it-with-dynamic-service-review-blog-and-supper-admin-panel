@@ -8,7 +8,7 @@ const SingleService = ({ service }) => {
 
     return (
 
-        <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+        <div class="col-lg-4 mb-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
 
             <div className="box">
                 <div className="img-container" >
