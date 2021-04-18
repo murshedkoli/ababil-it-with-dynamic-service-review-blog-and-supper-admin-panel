@@ -1,4 +1,6 @@
 import React from 'react';
+import swal from 'sweetalert';
+
 
 const Admins = ({admins, notification, setNotification}) => {
 
@@ -20,6 +22,8 @@ const Admins = ({admins, notification, setNotification}) => {
                     newnote.update = "Successfully Remove Admin";
                     newnote.failed = "";
                     setNotification(newnote);
+                    swal("Ohhhhhhh!", "You Just Remove From Admin!", "warning");
+
                 } else {
                     const newnote = { ...notification };
                     newnote.update = "";

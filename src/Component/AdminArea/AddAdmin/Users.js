@@ -1,4 +1,6 @@
 import React from 'react';
+import swal from 'sweetalert';
+
 
 const Users = ({users, notification, setNotification}) => {
 
@@ -18,6 +20,8 @@ const Users = ({users, notification, setNotification}) => {
                     newnote.update = "Successfully Make Admin";
                     newnote.failed = "";
                     setNotification(newnote);
+                    swal("Congratulations!", "You Make Admin Successfully!", "success");
+
                 } else {
                     const newnote = { ...notification };
                     newnote.update = "";
