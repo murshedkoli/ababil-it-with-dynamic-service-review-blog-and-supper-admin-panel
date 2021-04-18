@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Services.css'
 import SingleService from './SingleService';
+import loading from '../../../Images/loading.gif';
 
 const Services = () => {
 
@@ -26,13 +27,13 @@ const Services = () => {
 
                 <div class="section-title">
                     <h2>Our Services</h2>
-                    <p> We Provide Quality Service for you, come and get now... {services.length} </p>
+                    <p> We Provide Quality Service for you, come and get now...  </p>
                 </div>
 
                 <div class="row">
 
                 {
-                    services.map(service => <SingleService service={service} /> )
+                   services.length?  services.map(service => <SingleService service={service} /> ): <img style={{width:'100%'}} src={loading} alt=""/>
                 }
                     
 

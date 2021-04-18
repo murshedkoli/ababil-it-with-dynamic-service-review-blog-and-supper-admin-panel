@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SingleReview from './SingleReview';
+import loading from '../../../Images/loading.gif';
+
 
 const Review = () => {
 
@@ -30,7 +32,7 @@ const Review = () => {
                 <div class="row">
 
                 {
-                    reviews.map(review=> <SingleReview review={review} />)
+                   reviews.length? reviews.map(review=> <SingleReview review={review} />):<img style={{width:'100%'}} src={loading} alt=""/>
                 }
                     
 

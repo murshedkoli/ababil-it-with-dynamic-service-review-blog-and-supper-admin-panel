@@ -14,6 +14,7 @@ import ManageService from './Component/AdminArea/ManageService/ManageService';
 import AddBlogPost from './Component/AdminArea/AddBlogPost/AddBlogPost';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 import AddReviews from './Component/AdminArea/AddReviews/AddReviews';
+import OrderForm from './Component/AdminArea/OrderForm/OrderForm';
 
 function App() {
   return (
@@ -51,6 +52,12 @@ function App() {
           <PrivateRoute  path="/addreviews">
             <AddReviews/>
           </PrivateRoute>
+
+
+          <PrivateRoute  path="/orderform/:_id">
+            <OrderForm/>
+          </PrivateRoute>
+
 
           <Route  path="/*">
             <NotFoundPage/>

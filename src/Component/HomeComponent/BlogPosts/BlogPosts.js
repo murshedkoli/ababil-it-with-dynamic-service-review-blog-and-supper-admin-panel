@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SinglePost from './SinglePost';
+import loading from '../../../Images/loading.gif';
 
 const BlogPosts = () => {
 
@@ -32,7 +33,7 @@ const BlogPosts = () => {
             <div class="row">
 
                 {
-                    blogposts.map(post=> <SinglePost post={post}/>)
+                   blogposts.length? blogposts.map(post=> <SinglePost post={post}/>): <img style={{width:'100%'}} src={loading} alt=""/>
                 }
 
                 

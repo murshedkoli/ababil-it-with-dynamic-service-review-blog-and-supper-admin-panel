@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const SingleService = ({service}) => {
 
-    const {imgUrl, serviceName, serviceCost, serviceId} = service;
+    const {imgUrl, serviceName, serviceCost, serviceId, _id} = service;
 
     return (
 
@@ -16,7 +16,7 @@ const SingleService = ({service}) => {
                 <br/>
                 <h3>{serviceName}</h3>
                 <h4><sup>৳</sup> {serviceCost} </h4>
-                <Link to="/registration">
+                <Link to={`/orderform/${_id}`}>
                 <button class="btn text-uppercase btn-block btn-outline-success p-3">Get the Service</button>
                 </Link>
             </div>
