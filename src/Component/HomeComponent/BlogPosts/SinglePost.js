@@ -6,7 +6,7 @@ const SinglePost = ({post}) => {
     return (
         <div class="col-lg-4 mt-2">
             <div class="card" style={{width: '18rem'}}>
-                <img class="card-img-top" src={imgUrl} alt="Post Image"/>
+                <img style={{height:'200px'}} class="card-img-top" src={imgUrl} alt="Post Image"/>
                 <div class="card-body">
                     <h5 class="card-title"> {postTitle}</h5>
                     <p class="card-text">{postContent}</p>

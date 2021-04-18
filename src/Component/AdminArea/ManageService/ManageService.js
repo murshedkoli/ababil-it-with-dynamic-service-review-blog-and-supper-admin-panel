@@ -38,7 +38,7 @@ const ManageService = () => {
             <div className="p-5" style={{marginTop:'30px'}}>
                
 
-                <h1 style={{textAlign:'center', color:'white', borderBottom:'1px solid #37517e',  marginBottom:'40px'}}>Manage Service {services.length}</h1>
+                <h1 style={{textAlign:'center', color:'white', borderBottom:'1px solid #37517e',  marginBottom:'40px'}}>Manage Services</h1>
                 <h3 style={{color:'green', textAlign:'center'}}>{notification.update}</h3>
                 <h3 style={{color:'green', textAlign:'center'}}>{notification.failed}</h3>
                 <ServiceForManage services={services} notification={notification} setNotification={setNotification}  />
