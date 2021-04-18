@@ -52,8 +52,10 @@ const CheckoutForm = ({handlePayment}) => {
                 paymentSuccess && <p style={{color:'green'}}>{paymentSuccess}</p>
             }
             <form onSubmit={handleSubmit}>
+                <div style={{border:'1px solid black', padding:'10px', marginBottom:'5px'}}>
                 <CardElement />
-                <button  type="submit" disabled={!stripe}>
+                </div>
+                <button className="btn btn-success btn-block"  type="submit" disabled={!stripe}>
                     Payment
              </button>
             </form>
